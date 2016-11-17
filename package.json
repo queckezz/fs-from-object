@@ -2,8 +2,9 @@
   "name": "fs-from-object",
   "version": "0.1.0",
   "description": "Create files and folders in the filesystem directly from an object",
-  "main": "index.js",
+  "main": "index.out.js",
   "scripts": {
+    "prepublish": "async-to-gen index.js > index.out.js",
     "test": "run-s test:*",
     "test:lint": "standard --fix",
     "test:run": "node --harmony-async-await node_modules/ava/cli.js"
@@ -24,6 +25,7 @@
   "author": "Fabian Eichenberger <fabian.eichenberger@gmail.com> (https://github.com/queckezz)",
   "license": "MIT",
   "devDependencies": {
+    "async-to-gen": "^1.1.4",
     "ava": "^0.17.0",
     "mkdirp-then": "^1.2.0",
     "npm-run-all": "^3.1.1",
