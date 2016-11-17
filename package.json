@@ -1,6 +1,6 @@
 {
   "name": "fs-from-object",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Create files and folders in the filesystem directly from an object",
   "main": "index.out.js",
   "scripts": {
@@ -25,7 +25,9 @@
   "author": "Fabian Eichenberger <fabian.eichenberger@gmail.com> (https://github.com/queckezz)",
   "license": "MIT",
   "ava": {
-    "require": ["async-to-gen/register"]
+    "require": [
+      "async-to-gen/register"
+    ]
   },
   "devDependencies": {
     "async-to-gen": "^1.1.4",
