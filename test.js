@@ -1,22 +1,8 @@
 
-const mkdirp = require('mkdirp-then')
-const fsFromObject = require('./')
+const { ephemeralFsFromObject } = require('./')
 const { stat } = require('mz/fs')
-const { tmpdir } = require('os')
 const { join } = require('path')
-const rmfr = require('rmfr')
-const uuid = require('uuid')
 const test = require('ava')
-
-const ephemeralFsFromObject = async (obj, cb) => {
-  const path = join(tmpdir(), uuid.v4())
-
-  await mkdirp(path)
-  await fsFromObject(path, obj)
-  await cb(path)
-  await rmfr(path)
-  return null
-}
 
 test('creates a file', async (t) => {
   const date = new Date('09/09/2016')

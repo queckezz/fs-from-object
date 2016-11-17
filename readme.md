@@ -11,6 +11,8 @@
 > ​:zap:​ Create files and folders in the filesystem directly from an object.
 
 ```js
+const { fsFromObject } = require('fs-from-object')
+
 const tree = [
   { name: 'index.txt', mtime: new Date('07/07/2016'), contents: 'Hello World!' },
 
@@ -34,7 +36,7 @@ fsFromObject(process.cwd(), tree)
 
 ## API
 
-### `fsFromObject(path: string, tree: object)`
+### `fsFromObject(path: String, tree: Object)`
 
 Creates the given `tree` representation at `path`.
 
@@ -45,6 +47,27 @@ Each node can have the following properties:
 * **name:**  Name of the file or folder
 * **contents:** File or folder contents
 * **mtime:** Modified time of a file or directory
+
+### `ephemeralFsFromObject(tree: Object, task: Function<Promise>)`
+
+Creates an ephemeral path with the given `tree` in it. As soon as `task` resolves, the folder will get deleted.
+
+The ephemeral path has the following signature:
+
+```js
+`${os.tmpdir()}/${uuid.v4()}`
+```
+
+#### Example
+
+```js
+ephemeralFsFromObject([{ name: 'index.txt', contents: 'test' }], (ephemeralPath) => {
+    return fs.readFile(join(ephemeralPath, 'index.txt'))
+    // -> test
+}).then(() => {
+  // folder deleted here
+})
+```
 
 ## License
 

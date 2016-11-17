@@ -29,16 +29,16 @@
       "async-to-gen/register"
     ]
   },
+  "dependencies": {
+    "mkdirp-then": "^1.2.0",
+    "mz": "^2.5.0",
+    "rmfr": "^1.0.1",
+    "uuid": "^2.0.3"
+  },
   "devDependencies": {
     "async-to-gen": "^1.1.4",
     "ava": "^0.17.0",
-    "mkdirp-then": "^1.2.0",
     "npm-run-all": "^3.1.1",
-    "rmfr": "^1.0.1",
-    "standard": "^8.5.0",
-    "uuid": "^2.0.3"
-  },
-  "dependencies": {
-    "mz": "^2.5.0"
+    "standard": "^8.5.0"
   }
 }
