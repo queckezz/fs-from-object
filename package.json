@@ -1,0 +1,37 @@
+{
+  "name": "fs-from-object",
+  "version": "0.0.0",
+  "description": "Create files and folders in the filesystem directly from an object",
+  "main": "index.js",
+  "scripts": {
+    "test": "run-s test:*",
+    "test:lint": "standard --fix",
+    "test:run": "node --harmony-async-await node_modules/ava/cli.js"
+  },
+  "keywords": [
+    "fs",
+    "file",
+    "folder",
+    "create",
+    "filesystem",
+    "object",
+    "memory"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/queckezz/fs-from-object"
+  },
+  "author": "Fabian Eichenberger <fabian.eichenberger@gmail.com> (https://github.com/queckezz)",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "mkdirp-then": "^1.2.0",
+    "npm-run-all": "^3.1.1",
+    "rmfr": "^1.0.1",
+    "standard": "^8.5.0",
+    "uuid": "^2.0.3"
+  },
+  "dependencies": {
+    "mz": "^2.5.0"
+  }
+}
