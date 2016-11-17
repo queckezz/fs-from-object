@@ -12,7 +12,7 @@
 
 ```js
 const tree = [
-  { name: 'index.txt', mtime: new Date('07/07/2016), contents: 'Hello World!' },
+  { name: 'index.txt', mtime: new Date('07/07/2016'), contents: 'Hello World!' },
 
   {
     name: 'folder',
@@ -38,7 +38,7 @@ fsFromObject(process.cwd(), tree)
 
 Creates the given `tree` representation at `path`.
 
-#### Nodes
+#### Tree Nodes
 
 Each node can have the following properties:
 
