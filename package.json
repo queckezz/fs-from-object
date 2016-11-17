@@ -7,7 +7,7 @@
     "prepublish": "async-to-gen index.js > index.out.js",
     "test": "run-s test:*",
     "test:lint": "standard --fix",
-    "test:run": "node --harmony-async-await node_modules/ava/cli.js"
+    "test:run": "ava"
   },
   "keywords": [
     "fs",
@@ -24,6 +24,9 @@
   },
   "author": "Fabian Eichenberger <fabian.eichenberger@gmail.com> (https://github.com/queckezz)",
   "license": "MIT",
+  "ava": {
+    "require": ["async-to-gen/register"]
+  },
   "devDependencies": {
     "async-to-gen": "^1.1.4",
     "ava": "^0.17.0",
