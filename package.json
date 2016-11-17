@@ -1,6 +1,6 @@
 {
   "name": "fs-from-object",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Create files and folders in the filesystem directly from an object",
   "main": "index.out.js",
   "scripts": {
