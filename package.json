@@ -33,7 +33,7 @@
     "mkdirp-then": "^1.2.0",
     "mz": "^2.5.0",
     "rmfr": "^1.0.1",
-    "uuid": "^2.0.3"
+    "uuid": "^3.0.0"
   },
   "devDependencies": {
     "async-to-gen": "^1.1.4",
