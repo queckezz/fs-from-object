@@ -6,7 +6,9 @@ const { join } = require('path')
 const rmfr = require('rmfr')
 const uuid = require('uuid')
 
-const isFile = ({ contents }) => typeof contents === 'string'
+const isFile = ({ contents }) => contents
+  ? typeof contents === 'string' && !Array.isArray(contents)
+  : true
 
 const createFile = async (filePath, data, mtime) => {
   await writeFile(filePath, data)
@@ -19,7 +21,7 @@ const fsFromObject = (path, tree) => {
     const nodePath = join(path, node.name)
 
     return isFile(node)
-      ? createFile(nodePath, node.contents, node.mtime)
+      ? createFile(nodePath, node.contents || '', node.mtime)
       : mkdir(nodePath).then(() => fsFromObject(nodePath, node.contents))
   }))
 }
@@ -35,5 +37,6 @@ const ephemeralFsFromObject = async (obj, cb) => {
 
 module.exports = {
   ephemeralFsFromObject,
-  fsFromObject
+  fsFromObject,
+  isFile
 }
