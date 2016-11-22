@@ -20,7 +20,7 @@ const tree = [
     name: 'folder',
     contents: [
       { name: 'one.txt', contents: 'Hello World!' },
-      { name: 'two.txt', contents: 'Hello World!' }
+      { name: 'empty.txt' }
     ]
   }
 ]
@@ -45,8 +45,8 @@ Creates the given `tree` representation at `path`.
 Each node can have the following properties:
 
 * **name:**  Name of the file or folder
-* **contents:** File or folder contents
-* **mtime:** Modified time of a file or directory
+* **contents:** File or folder contents (optional)
+* **mtime:** Modified time of a file or directory (optional)
 
 ### `ephemeralFsFromObject(tree: Object, task: Function<Promise>)`
 
