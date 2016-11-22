@@ -5,10 +5,10 @@ const { join } = require('path')
 const test = require('ava')
 
 test('file patterns', (t) => {
- t.true(isFile({ name: 'test.txt' }))
- t.false(isFile({ name: 'test.txt', contents: [] }))
- t.true(isFile({ name: 'test.txt', contents: '' }))
-}) 
+  t.true(isFile({ name: 'test.txt' }))
+  t.false(isFile({ name: 'test.txt', contents: [] }))
+  t.true(isFile({ name: 'test.txt', contents: '' }))
+})
 
 test('creates a file', async (t) => {
   const date = new Date('09/09/2016')
@@ -62,7 +62,7 @@ test('recursive', async (t) => {
   return ephemeralFsFromObject(tree, sandbox)
 })
 
-test.only('creates an empty file when no contents given', (t) => {
+test('creates an empty file when no contents given', (t) => {
   const sandbox = async (path) => {
     const filePath = join(path, 'index.txt')
     await stat(filePath)
